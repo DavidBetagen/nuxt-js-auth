@@ -69,7 +69,6 @@
         async loginLocal() {
           try {
             let response = await this.$auth.loginWith("local", {data: this.form});
-            this.$router.push('/dashboard');
           } catch (error) {
             console.log(error);
           }

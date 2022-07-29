@@ -53,7 +53,7 @@ export default {
           type: 'Bearer'
         },
         user: {
-          property: 'user',
+          property: false,
           autoFetch: true
         },
         endpoints: {
@@ -69,6 +69,14 @@ export default {
         clientId: process.env.FACEBOOK_CLIENT_ID,
         scope: ['public_profile', 'email']
       },
+    },
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      home: '/dashboard'
+      // login: User will be redirected to this path if login is required.
+      // logout: User will be redirected to this path if after logout, current route is protected.
+      // home: User will be redirected to this path after login. (rewriteRedirects will rewrite this path)
     }
   },
 
